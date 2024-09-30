@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Items</title>
+  </head>
+  <body>
+    <h1>Liste des Items</h1>
+    <ul>
+      <% items.forEach(item => { %>
+      <li>
+        <%= item.name %> (Quantité: <%= item.quantity %>)
+        <a href="/items/<%= item._id %>/edit">Éditer</a>
+        <form action="/items/<%= item._id %>/delete" method="POST">
+          <button type="submit">Supprimer</button>
+        </form>
+      </li>
+      <% }) %>
+    </ul>
+    <a href="/items/new">Ajouter un nouvel item</a>
+  </body>
+</html>
